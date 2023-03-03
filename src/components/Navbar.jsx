@@ -6,7 +6,7 @@ function Navbar() {
         <div className='navbar__logo'>
             <img src="LOGO.png" alt="logo" />
         </div>
-        <div>Acccueil</div>
+        <div>Accueil</div>
         <div>A propos</div>
     </nav>;
 }
