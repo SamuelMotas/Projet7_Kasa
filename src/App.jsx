@@ -9,12 +9,10 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Navbar />
       <Main>
         <Banner />
         <ApartmentGrid />
       </Main>
-      <Footer />
     </div>
   );
 }
