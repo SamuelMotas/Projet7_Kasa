@@ -1,3 +1,5 @@
+@use "../styles/variables.scss" as *;
+
 .banner {
     position: relative;
     padding-inline: 40px;
@@ -13,16 +15,14 @@
     background-size: cover;
     margin-bottom: 32px;
     max-width: 100%;
-}
 
-
-
-.banner::before {
-    position: absolute;
-    content: "";
-    border-radius: 32px;
-    inset: 0;
-    background: #000000;
-    mix-blend-mode: darken;
-    opacity: 0.3;
+    &::before {
+        position: absolute;
+        content: "";
+        border-radius: 32px;
+        inset: 0;
+        background: #000000;
+        mix-blend-mode: darken;
+        opacity: 0.3;
+    }
 }
