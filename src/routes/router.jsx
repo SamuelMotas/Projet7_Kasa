@@ -1,13 +1,16 @@
 import React from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import App from "../App";
-import Footer from "../components/Footer";
+import Footer from "../layout/Footer";
+import Main from "../layout/Main"
 import Navbar from "../components/Navbar";
 
 const HeaderFooterLayout = () => {
     return <>
         <Navbar />
-        <Outlet />
+        <Main>
+            <Outlet />
+        </Main>
         <Footer />
     </>
 }
@@ -23,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/flat",
-                element:<h1>Nos appartements</h1> 
+                element: <h1>Appartements</h1>
             },
             {
                 path: "/about",
