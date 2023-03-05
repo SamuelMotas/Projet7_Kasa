@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/ApartmentGrid.css"
+import "../styles/ApartmentGrid.scss"
 import Appartment from "./Apartment.jsx"
 
 function ApartmentGrid() {

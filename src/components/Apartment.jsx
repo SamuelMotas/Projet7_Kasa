@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../styles/Apartment.css"
+import "../styles/Apartment.scss"
 
 function Apartment() {
     return <div className='apartment'>
