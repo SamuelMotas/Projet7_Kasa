@@ -1,9 +1,10 @@
 import React from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import App from "../App";
+import HomePage from "../pages/HomePage";
 import Footer from "../layout/Footer";
 import Main from "../layout/Main"
 import Navbar from "../components/Navbar";
+import ApartmentPage from "../pages/ApartmentPage";
 
 const HeaderFooterLayout = () => {
     return <>
@@ -22,11 +23,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <App />
+                element: <HomePage />
             },
             {
-                path: "/flat",
-                element: <h1>Appartements</h1>
+                path: "/Fiche-Logement",  ////* "/flat" */////
+                element: <ApartmentPage />
             },
             {
                 path: "/about",
