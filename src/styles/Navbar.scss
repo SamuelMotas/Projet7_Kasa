@@ -9,6 +9,10 @@
     font-weight: 500;
     margin: 16px;
 
+    @media screen and (width <=768px) {
+        text-transform: uppercase;
+    }
+
     &>*:first-child {
         margin-right: auto;
     }

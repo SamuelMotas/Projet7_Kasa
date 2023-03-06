@@ -1,16 +1,19 @@
 import React from 'react';
+import "../pages/ApartmentPage.scss"
+import ApartmentDescription from '../components/ApartmentDescription';
+import "../styles/ApartmentDescription.scss"
+import ApartmentBanner from '../components/ApartmentBanner';
+import ApartmentHeader from '../components/ApartmentHeader';
+
 
 function ApartmentPage() {
     return <div className='apartment-page'>
-        <div>
-            <img src="Background.png" alt="background" />
-        </div>
-        <div className="apartment-page__title">
-            <div className="apartment-page__subtitle">
-                <p>Cozy</p>
-                <p>Cozy</p>
-                <p>Paris  10</p>
-            </div>
+        <ApartmentBanner />
+        <ApartmentHeader />
+
+        <div className='apartment__description__area'>
+            <ApartmentDescription />
+            <ApartmentDescription />
         </div>
     </div>;
 }
