@@ -1,6 +1,7 @@
 @use "../styles/variables.scss" as *;
 
-.apartment__description {
+.description__panel {
+    margin-bottom: 16px;
     p {
         margin-block: 0;
     }
