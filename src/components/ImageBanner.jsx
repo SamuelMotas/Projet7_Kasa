@@ -1,10 +1,10 @@
 import React from 'react';
 import "../styles/ImageBanner.scss"
 
-function ImageBanner() {
+function ImageBanner(props) {
     return (
         <div className='image__banner'>
-            <img src="Background.png" alt="background" />
+            <img src={props.imageUrl} alt="background" />
         </div>
 
     );

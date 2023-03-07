@@ -1,36 +1,39 @@
 import React from 'react';
 import "../styles/ApartmentHeader.scss"
 
-function ApartmentHeader() {
-  return (
-    <div className='apartment__header'>
-    <div className='apartment__title'>
-        <h1>Cozy loft on the Canal Saint-Martin</h1>
-        <h2>Paris, Île-de-France</h2>
-        <div className='apartment__tags'>
-            <span>Cozy</span>
-            <span>Canal</span>
-            <span>Paris 10</span>
+function ApartmentHeader({ accomodation }) {
+    const { name } = accomodation.host
+    const [firstName, lastName] = name.split(" ")
+
+    return (
+        <div className='apartment__header'>
+            <div className='apartment__title'>
+                <h1>{accomodation.title}</h1>
+                <h2>{accomodation.location}</h2>
+                <div className='apartment__tags'>
+                    {accomodation.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                    ))}
+                </div>
+            </div>
+            <div className="apartment__owner">
+                <div className='apartment__owner__details'>
+                    <h3>
+                        <span>{firstName}</span>
+                        <span>{lastName}</span>
+                    </h3>
+                    <div className="apartment__owner__badge">
+                        <img src={accomodation.host.picture} alt="host" />
+                    </div>
+                </div>
+                <div className='apartment__owner__stars'>
+                    {[1, 2, 3, 4, 5].map((num) => (
+                        <span key={num} className={accomodation.rating >= num ? "on" : ""}>★</span>
+                    ))}
+                </div>
+            </div>
         </div>
-    </div>
-    <div className="apartment__owner">
-        <div className='apartment__owner__details'>
-            <h3>
-                <span>Alexandre</span>
-                <span>Dumas</span>
-            </h3>
-            <div className="apartment__owner__badge"></div>
-        </div>
-        <div className='apartment__owner__stars'>
-            <span className='on'>★</span>
-            <span className='on'>★</span>
-            <span className='on'>★</span>
-            <span className='off'>★</span>
-            <span className='off'>★</span>
-        </div>
-    </div>
-</div>
-  );
+    );
 }
 
 export default ApartmentHeader;
