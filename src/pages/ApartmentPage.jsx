@@ -17,7 +17,9 @@ function ApartmentPage() {
         fetch("db.json")
             .then((res) => res.json())
             .then((accomodations) => {
-                const accomodation = accomodations.find((accomodation) => accomodation.id === location.state.apartmentId);
+                const accomodation = accomodations
+                    .find((accomodation) =>
+                        accomodation.id === location.state.apartmentId);
                 setaccomodation(accomodation)
             })
             .catch(console.error);
