@@ -1,0 +1,19 @@
+@use "../styles/variables.scss" as *;
+
+.error-page {
+    color: $color-primary;
+    text-align: center;
+    h1 {
+        font-size: 150px;
+    }
+    h2 {
+        font-size: 28px;
+        font-weight:400;
+    }
+    a {
+        color: $color-primary;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

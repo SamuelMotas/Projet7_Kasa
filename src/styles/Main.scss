@@ -1,4 +1,7 @@
 .main {
    padding: 32px 48px;
    min-height: 60vh;
+   @media screen and (width <= 768px) {
+      padding: 16px;
+   }
 }

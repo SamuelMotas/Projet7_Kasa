@@ -1,13 +1,18 @@
 import React from 'react';
 import "../styles/ApartmentGrid.scss"
-import Appartment from "./Apartment.jsx"
+import ApartmentCard from "./ApartmentCard.jsx"
+
+fetch("db.json")
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+    .catch(console.error);
 
 function ApartmentGrid() {
     return <div className='grid'>
-        <Appartment />
-        <Appartment />
-        <Appartment />
-        <Appartment />
+        <ApartmentCard />
+        <ApartmentCard />
+        <ApartmentCard />
+        <ApartmentCard />
     </div>;
 }
 

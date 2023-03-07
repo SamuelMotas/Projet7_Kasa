@@ -9,6 +9,10 @@
     gap: 16px;
     padding: 16px;
     justify-content: space-between;
+    & > * {
+        width: 100%;
+        max-width: 20rem;
+    }
 }
 
 @media screen and (width <=768px) {
