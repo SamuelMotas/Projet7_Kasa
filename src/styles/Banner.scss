@@ -16,6 +16,13 @@
     margin-bottom: 32px;
     max-width: 100%;
 
+    h2 {
+        position: absolute;
+        @media screen and (width <= 768px){
+            text-align: center;
+        }
+    }
+
     &::before {
         position: absolute;
         content: "";
