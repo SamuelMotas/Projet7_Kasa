@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../pages/ApartmentPage.scss"
+import "../styles/ApartmentPage.scss"
 import DescriptionPanel from '../components/DescriptionPanel';
 import "../styles/DescriptionPanel.scss"
 import ImageBanner from '../components/ImageBanner';

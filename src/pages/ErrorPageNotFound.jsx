@@ -1,5 +1,5 @@
 import React from 'react';
-import "../pages/ErrorPageNotFound.scss";
+import "../styles/ErrorPageNotFound.scss";
 import Navbar from '../components/Navbar';
 import Main from '../layout/Main';
 import { Link } from 'react-router-dom';
