@@ -13,11 +13,11 @@ function DescriptionPanel(props) {
     <div className="description__panel">
       <p className='description__header'>
         <span>{props.title}</span>
-        <i className="fas fa-chevron-up" onClick={showContent}></i> 
-      </p>                                                              
-      {isContentVisible && <p className='description__content'>{props.content}</p>} 
+        <i className={`fas ${isContentVisible ? "fa-chevron-down" : "fa-chevron-up"}`} onClick={showContent}></i>
+      </p>
+      {isContentVisible && <p className='description__content'>{props.content}</p>}
     </div>
-  ); 
+  );
 }
 
 export default DescriptionPanel;

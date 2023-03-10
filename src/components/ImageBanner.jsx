@@ -1,12 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../styles/ImageBanner.scss"
 
 function ImageBanner(props) {
-    const imageUrl = props.imageUrl ? props.imageUrl : "img-about.png"
+    const pictures = props.pictures
+
+    const [currentPicture, setCurrentPicture] = useState(0)
+
+    //Si c'est la première image tu l'as montre sinon ça ne montre rien.
+    const getClassName = (i) => {
+        if (i === currentPicture) return "show";//class show
+        return "";
+    };
+
+    // le chiffre 0 de setCurrentPicture va passer à 1,2... et ne depassera pas pictures.length grâce à un modulo %
+    const moveToNext = () => {
+        setCurrentPicture((currentPicture + 1) % pictures.length)
+    }
+
+    const arePicturesAvalaible = () => {
+        return pictures && pictures.length > 0
+    }
+
+    //Même principe mais dans l'autre sens 
+    const moveToPrevious = () => {
+        const newCurrentPicture = currentPicture - 1
+        if (newCurrentPicture < 0) {
+            setCurrentPicture(pictures.length - 1)
+            return
+        }
+        setCurrentPicture((currentPicture - 1))
+    }
+
+    const getCarouselOrDefaultImage = () => {
+        if (!arePicturesAvalaible()) {
+            return <img src='img-about.png' className='show' alt=''></img>
+        }
+        return pictures.map((pic, i) => (
+            <img key={pic} src={pic} alt="" className={getClassName(i)}></img>
+        ))
+    }
 
     return (
         <div className='image__banner'>
-            <img src={imageUrl} alt="background" />
+            <div className='image__container'>{getCarouselOrDefaultImage()}</div>
+            {arePicturesAvalaible() &&
+                <>
+                    <button className='btn btn-next' onClick={moveToNext}>
+                        <i className='fas fa-chevron-left'></i>
+                    </button>
+                    <button className='btn btn-previous' onClick={moveToPrevious}>
+                        <i className='fas fa-chevron-right'></i>
+                    </button>
+                </>
+            }
         </div>
 
     );

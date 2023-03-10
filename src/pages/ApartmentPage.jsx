@@ -27,14 +27,14 @@ function ApartmentPage() {
     if (accomodation == null) return <div>Loading...</div>
 
     return <div className='apartment-page'>
-        <ImageBanner imageUrl={accomodation.cover} />
+        <ImageBanner pictures={accomodation.pictures} />
         <ApartmentHeader accomodation={accomodation} />
 
         <div className='apartment__description__area'>
             <DescriptionPanel title="Description" content={accomodation.description} />
             <DescriptionPanel title="Equipements"
-                content={accomodation.equipments.map((equipements) =>
-                    (<li>{equipements}</li>))} />
+                content={accomodation.equipments.map((equipements, i) =>
+                    (<li key={i}>{equipements}</li>))} />
         </div>
     </div>;
 }

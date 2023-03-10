@@ -1,7 +1,53 @@
+@use "../styles/variables.scss" as *;
+
 .image__banner {
-    margin-bottom:32px;
-    img {
-        width: 100%;
+    margin-bottom: 32px;
+    position: relative;
+
+    .btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        background-color: transparent;
+        color: $color-tertiary;
+        font-size: 48px;
+        cursor: pointer;
+        border-width: 0;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &.btn-next {
+            left: 0;
+        }
+
+        &.btn-previous {
+            right: 0;
+        }
+    }
+
+    .image__container {
+        position: relative;
         height: 415px;
+        width: 100%;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            object-fit: cover;
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+
+            &.show {
+                opacity: 1;
+            }
+
+        }
     }
 }
