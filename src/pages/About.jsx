@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '../layout/Banner';
 import "../pages/About.scss"
 import ImageBanner from '../components/ImageBanner';
 import DescriptionPanel from '../components/DescriptionPanel';
