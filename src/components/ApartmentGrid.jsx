@@ -19,17 +19,6 @@ function ApartmentGrid() {
         }, [])
     
 
-    useEffect(() => {
-        const abortController = new AbortController()
-        fetch("db.json", { signal: abortController.signal })
-            .then((res) => res.json())
-            .then((res) => setApartments(res))
-            .catch(console.error);
-        return () => {
-            abortController.abort() //Pour clean up(nettoyer)
-        }
-    }, [])
-
     return (
         <div className='grid'>
             {apartments.map((apartment) => (
