@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom"
 import "../styles/Navbar.scss"
 
 function Navbar() {
-
-
     return <nav className='navbar'>
         <NavLink to="/">
             <div className='navbar__logo'>
