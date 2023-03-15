@@ -14,7 +14,12 @@ function ImageBanner(props) {
 
     // le chiffre 0 de setCurrentPicture va passer à 1,2... et ne depassera pas pictures.length grâce à un modulo %
     const moveToNext = () => {
-        setCurrentPicture((currentPicture + 1) % pictures.length)
+        const newCurrentPicture = currentPicture + 1
+        if (newCurrentPicture == pictures.length) {
+            setCurrentPicture(0)
+            return
+        }
+        setCurrentPicture(newCurrentPicture)
     }
 
     const arePicturesAvalaible = () => {
@@ -28,7 +33,7 @@ function ImageBanner(props) {
             setCurrentPicture(pictures.length - 1)
             return
         }
-        setCurrentPicture((currentPicture - 1))
+        setCurrentPicture(newCurrentPicture)
     }
 
     const getCarouselOrDefaultImage = () => {

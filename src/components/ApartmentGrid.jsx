@@ -13,16 +13,16 @@ function ApartmentGrid() {
                 .then((res) => res.json())
                 .then((res) => setApartments(res))
                 .catch(console.error);
-            return () => {
+            return /*() => {
                 abortController.abort() //Pour clean up(nettoyer)
-            }
+            }*/
         }, [])
     
 
     return (
         <div className='grid'>
-            {apartments.map((apartment) => (
-                <ApartmentCard title={apartment.title} imageUrl={apartment.cover} id={apartment.id} key={apartment.id} />
+            {apartments.map((props) => (
+                <ApartmentCard title={props.title} imageUrl={props.cover} id={props.id} key={props.id} />
             ))}
         </div>
     );
