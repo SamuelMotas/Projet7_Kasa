@@ -12,7 +12,7 @@ function ImageBanner(props) {
         return "";
     };
 
-    // le chiffre 0 de setCurrentPicture va passer à 1,2... et ne depassera pas pictures.length grâce à un modulo %
+   
     const moveToNext = () => {
         const newCurrentPicture = currentPicture + 1
         if (newCurrentPicture == pictures.length) {
